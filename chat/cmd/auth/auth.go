@@ -10,6 +10,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	email string
+	password string
+	apikey string
+)
+
 // AuthCmd represents the auth command
 var AuthCmd = &cobra.Command{
 	Use:   "auth",
@@ -22,7 +28,9 @@ var AuthCmd = &cobra.Command{
 
 func init() {
 	//rootCmd.AddCommand(authCmd)
-
+	loginCmd.Flags().StringVarP(&email,"email", "e", "", "The email to your OpenAI account")
+	loginCmd.Flags().StringVarP(&password,"password", "p", "", "The password to your OpenAI account")
+	loginCmd.Flags().StringVarP(&apikey,"apikey", "k", "", "The apikey to your OpenAI account")
 	// Here you will define your flags and configuration settings.
 	AuthCmd.AddCommand(loginCmd)
 	// Cobra supports Persistent Flags which will work for this command
