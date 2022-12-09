@@ -11,6 +11,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/TwiN/go-color"
 	"github.com/sirupsen/logrus"
 	chatgpt_go "github.com/zhan3333/chatgpt-go"
 	"github.com/inancgumus/screen"
@@ -51,8 +52,8 @@ var ConvCmd = &cobra.Command{
 		screen.Clear()
 		screen.MoveTopLeft()
 
-		fmt.Println("\nConversation with ChatGPT ( type 'bye' to exit )")
-		fmt.Println("=================================================")
+		fmt.Println(color.Ize(color.Green,"\nConversation with ChatGPT ( type 'bye' to exit )"))
+		fmt.Println(color.Ize(color.Green,"================================================="))
 
 		loginData := getLoginData()
 		//fmt.Println("Current Login Data: (email) %s (password) %s (apikey) %s", loginData.Email, loginData.Password, loginData.ApiKey)
@@ -87,7 +88,7 @@ var ConvCmd = &cobra.Command{
 
 		}
 
-		cmd.Help()
+		//cmd.Help()
 	},
 }
 

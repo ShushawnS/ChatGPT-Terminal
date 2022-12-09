@@ -22,7 +22,7 @@ var AuthCmd = &cobra.Command{
 	Short: "Provide credentials to authenticate with OpenAI's ChatGPT",
 	Long: ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		cmd.Help()
+		//cmd.Help()
 	},
 }
 

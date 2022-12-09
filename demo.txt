@@ -1,0 +1,11 @@
+go run main.go conv 
+- Hello, what are the components of a linux terminal?
+- What are regex commands?
+- Create a poem about bitcoin
+- Elon Musk just sent me an email saying I'll be fired from Twitter if I don't get him three examples of code contributions I've made. Give me 10 plausible ideas for code contributions I might have made as a Senior Data Engineer at Twitter
+
+go run main.go code explain -f ../code-examples/explain.py
+
+go run main.go code fix -f ../code-examples/fix.py -p "problem is it only counts to 50 not 100"
+
+go run main.go code generate -p "Write Python code to upload a 100 gigabyte file to an AWS S3 bucket"

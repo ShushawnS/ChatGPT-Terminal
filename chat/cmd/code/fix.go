@@ -9,6 +9,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/TwiN/go-color"
 	"github.com/sirupsen/logrus"
 	chatgpt_go "github.com/zhan3333/chatgpt-go"
 	"github.com/inancgumus/screen"
@@ -36,8 +37,8 @@ var fixCmd = &cobra.Command{
 		screen.Clear()
 		screen.MoveTopLeft()
 
-		fmt.Println("\nHere is ChatGPT's fixed solution of the code")
-		fmt.Println("============================================")
+		fmt.Println(color.Ize(color.Green,"\nHere is ChatGPT's fixed solution of the code"))
+		fmt.Println(color.Ize(color.Green,"============================================"))
 
 		loginData := getLoginData()
 		timeout := time.Second * 60
@@ -59,7 +60,7 @@ var fixCmd = &cobra.Command{
 
 		fmt.Println("\n", resp)
 
-		cmd.Help()
+		//cmd.Help()
 	},
 }
 

@@ -8,6 +8,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/TwiN/go-color"
 	"github.com/inancgumus/screen"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -34,8 +35,8 @@ var explainCmd = &cobra.Command{
 		screen.Clear()
 		screen.MoveTopLeft()
 
-		fmt.Println("\nHere is ChatGPT's explanation of the code")
-		fmt.Println("============================================")
+		fmt.Println(color.Ize(color.Green,"\nHere is ChatGPT's explanation of the code"))
+		fmt.Println(color.Ize(color.Green,"============================================"))
 
 		loginData := getLoginData()
 		timeout := time.Second * 60
@@ -55,9 +56,9 @@ var explainCmd = &cobra.Command{
 			panic(err)
 		}
 
-		fmt.Println("\n", resp)
+		fmt.Println("\n", resp, "\n")
 
-		cmd.Help()
+		//cmd.Help()
 	},
 }
 

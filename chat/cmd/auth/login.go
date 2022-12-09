@@ -45,7 +45,7 @@ var loginCmd = &cobra.Command{
 
 		saveToFile(email, password, apikey)
 
-		cmd.Help()
+		//cmd.Help()
 	},
 }
 

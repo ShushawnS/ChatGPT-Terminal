@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/TwiN/go-color"
 	"github.com/inancgumus/screen"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -23,8 +24,8 @@ var generateCmd = &cobra.Command{
 		screen.Clear()
 		screen.MoveTopLeft()
 
-		fmt.Println("\nHere is ChatGPT's code")
-		fmt.Println("============================================")
+		fmt.Println(color.Ize(color.Green,"\nHere is ChatGPT's code"))
+		fmt.Println(color.Ize(color.Green,"========================="))
 
 		loginData := getLoginData()
 		timeout := time.Second * 60
@@ -38,6 +39,7 @@ var generateCmd = &cobra.Command{
 		conversation := client.NewConversation("", "")
 
 		userText := prompt
+		//fmt.Println(userText)
 
 		resp, err := conversation.SendMessage(userText)
 		if err != nil {
@@ -46,7 +48,7 @@ var generateCmd = &cobra.Command{
 
 		fmt.Println("\n", resp)
 
-		cmd.Help()
+		//cmd.Help()
 	},
 }
 
